@@ -1,3 +1,15 @@
 body{
     background-color: aquamarine;
 }
+
+h1{
+    color: blue;
+}
+
+.clicked{
+    color: tomato;
+}
+
+.sexy-font{
+    font-style: italic;
+}
