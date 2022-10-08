@@ -27,14 +27,35 @@ function paintToDo(newTodo){
     button.innerText = "❌";
     button.addEventListener("click", deleteToDo);
 
+    span.classList.add("todo-list-item");
+    button.classList.add("todo-list-btn");
     li.appendChild(span);
     li.appendChild(button);
+    li.classList.add("todo-list");
 
     toDoList.appendChild(li);
 }
 
+function checkStatus(){
+    const saved = localStorage.getItem(TODOS_KEY);
+    if (saved !== null) {
+        const parsed = JSON.parse(saved);
+        if (parsed.length >= 5){
+            alert("So many Todos")
+            return true;
+        }
+    }
+
+    return false;
+}
+
 function handleToDoSubmit(event){
     event.preventDefault();
+
+    if (checkStatus()){
+        return;
+    }
+
     const newTodo = toDoInput.value;
     toDoInput.value = "";
     const newTodoObj = {
@@ -57,4 +78,4 @@ if (savedToDos !== null) {
     const parsedToDos = JSON.parse(savedToDos);
     toDos = parsedToDos;
     parsedToDos.forEach(paintToDo);
-  }
+}

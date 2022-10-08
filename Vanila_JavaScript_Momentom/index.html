@@ -6,33 +6,48 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         
         <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
         <title>Momentum App</title>
 
     </head>
     <bodys>
-        <h2 id="clock">00:00:00</h2>
-        <form class="hidden" id="login-form">
-            <input
-                required
-                maxlength="15"
-                type="text"
-                placeholder="What is your name?"
-            />
-            <input type="submit" value="Log In"/>
-        </form>
-        <h1 id="greeting" class="hidden"></h1>
-        <form id="todo-form">
-            <input type="text" placeholder="Write a To Do and Press Enter" required />
-        </form>
-        <ul id="todo-list"></ul>
-        <div id="quote">
-            <span></span>
-            <span></span>
-        </div>
-        <div id="weather">
-            <span></span>
-            <span></span>
-        </div>
+        <main class="container">
+            <h2 id="clock" class="clock">00:00:00</h2>
+            <br>
+            <form class="hidden" id="login-form">
+                <input
+                    required
+                    maxlength="15"
+                    type="text"
+                    placeholder="What is your name?"
+                />
+                <input type="submit" value="Log In"/>
+            </form>
+            <h1 id="greeting" class="hidden"></h1>
+
+            <div id="weather" class="weather">
+                <span></span>
+                <span></span>
+            </div>
+            <br>
+
+            <article>
+                <div id="quote_body">
+                    <span></span>
+                </div>
+                <footer>
+                    <div id="quote_author">
+                        <b><span></span></b>
+                    </div>
+                </footer>
+            </article>
+
+            <form id="todo-form">
+                <input type="text" placeholder="Write a To Do and Press Enter" required />
+            </form>
+            <ul id="todo-list"></ul> 
+        </main>
+        
         <script src="js/greeting.js"></script>
         <script src="js/clock.js"></script>
         <script src="js/quotes.js"></script>
